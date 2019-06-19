@@ -20,6 +20,11 @@
       <version>3.1.0</version>
     </dependency>
   </dependencies>
+  <configuration>
+  <processTypes>
+     <web>java $JAVA_OPTS -cp target/classes:target/dependency/* Main</web>
+  </processTypes>
+</configuration>
   <build>
     <plugins>
       <plugin>
