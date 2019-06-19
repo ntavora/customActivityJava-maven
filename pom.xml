@@ -7,7 +7,6 @@
   <version>1.0-SNAPSHOT</version>
   <artifactId>helloworld</artifactId>
   <packaging>war</packaging>
-
   <dependencies>
     <dependency>
       <groupId>org.eclipse.jetty</groupId>
@@ -19,12 +18,7 @@
       <artifactId>javax.servlet-api</artifactId>
       <version>3.1.0</version>
     </dependency>
-  </dependencies>
-  <configuration>
-  <processTypes>
-     <web>java $JAVA_OPTS -cp target/classes:target/dependency/* Main</web>
-  </processTypes>
-</configuration>
+  </dependencies> 
   <build>
     <plugins>
       <plugin>
@@ -37,6 +31,9 @@
             <buildpack>heroku/metrics</buildpack>
             <buildpack>heroku/jvm</buildpack>
           </buildpacks>
+		  <processTypes>
+     <web>java $JAVA_OPTS -cp target/classes:target/dependency/* Main</web>
+  </processTypes>
         </configuration>
       </plugin>
     </plugins>
